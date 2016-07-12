@@ -1,0 +1,129 @@
+/*body {
+    background: #444444;
+}*/
+
+#logowanie {
+    height: 100%;
+    font-family: 'Poiret One', cursive;
+}
+
+#invalid {
+    height: 100%;
+    font-family: 'Poiret One', cursive;
+    padding: 10% 0 0 0;
+}
+
+#invalid h3 {
+    color: #ffffff;
+}
+
+.login-page {
+  width: auto;
+  padding: 2rem 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #5C6195;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form h2 {
+    color: #ffffff;
+}
+.form input {
+  outline: 0;
+  background: #f2f2f2;
+  color: #222;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  text-transform: uppercase;
+  outline: 0;
+  background: #989898;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.left-inner-addon {
+    position: relative;
+}
+.left-inner-addon input {
+    padding-left: 40px;
+}
+.left-inner-addon i {
+    position: absolute;
+    padding: 15px 12px;
+    pointer-events: none;
+    font-size: 20px;
+    color: #c2c2c2;
+}
+hr.login {
+    border-top: 2px solid #5C6195;
+    text-align: center;
+}
+hr.login:after {
+    content: '\e033';
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    position: relative;
+    top: -20px;
+    padding: 0 20px;
+    background: #ffffff;
+    color: #5C6195;
+    font-size: 28px;
+}
+select {
+    /*background: rgb(37, 37, 38);*/
+    border: 1px solid #143987
+    border-radius: 10px;
+    width: 300px;
+}
+option {
+    /*background: rgb(46, 49, 51);*/
+    border: 0px solid transparent;
+}
+textarea {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 600px;
+}
+.powitanie {
+    text-align: center;
+    color: #143987;
+    font-weight: bold;
+    font-size: 5rem;
+}
+.info {
+    text-align: center;
+    color: #F70606;
+    font-style: italic
+}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="dashboard">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>Witaj: {{user_name}}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 text-center dashboard admin">
+                <a href="/admin/"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>ADMIN</a>
+            </div>
+            <div class="col-md-6 text-center dashboard plus">
+                <a href="/awarie/new/"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>DODAJ AWARIĘ</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

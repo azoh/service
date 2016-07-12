@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<section id="produkt">
+<div class="container">
+<div class="row">
+    {% if awarie.count > 0 %}
+	<table id="result_list" class="table table-striped table-bordered">
+		<thead>
+			<tr>
+				<th scope="col" class="sortable column">Wydział</th>
+				<th scope="col" class="sortable column">Maszyna</th>
+				<th scope="col" class="sortable column">Opis awarii</th>
+                <th scope="col" class="sortable column">Status</th>
+				<th scope="col" class="sortable column">Zgłaszający</th>
+				<th scope="col" class="sortable column">Data zgłoszenia awarii</th>
+			</tr>
+		</thead>
+		<tbody>
+        {% for awarie in awarie %}
+			<tr class="row1 text-center">
+				<td class="field-wydzial">{{ awarie.wydzial }}</td>
+				<td class="field-maszyna"><strong>{{ awarie.maszyna }}</strong></td>
+				<td class="field-opis text-justify">{{ awarie.description }}</td>
+				<th class="field-status"><a href="/admin/failure/awaria/{{ awarie.id }}/">{{ awarie.status }}</a></th>
+				<td class="field-declarant">{{ awarie.user }}</td>
+				<td class="field-filing_date">{{ awarie.add_date |date:"d-m-Y H:i" }}</td>
+			</tr>
+        {% endfor %}
+        </tbody>
+        {% else %}
+        <p>Brak awarii</p>
+	</table>
+        {% endif %}
+</div>
+</div>
+</section>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_static bootstrapped_goodies_tags %}
+
+{% block bodyclass %}{{ block.super }} login{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
+{% block navbar %}{% endblock %}
+{% block breadcrumbs %}{% endblock %}
+{% block usertools %}{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-12">
+<h1 class="powitanie">Witaj na stronie logowania!</h1>
+<p class="info">W razie wystąpienia jakichkolwiek problemów skontaktuj się z przełożony.</p>
+</div>
+</div>
+<div class="login-page">
+  <div class="form">
+    <form action="/auth/" method="post" class="login-form">{% csrf_token %}
+    <!--<h2>Logowanie</h2>-->
+        <div class="left-inner-addon ">
+    <i class="glyphicon glyphicon-user"></i>
+        <input type="text" name="username"  id="username" placeholder="Użytkownik">
+        </div>
+        <div class="left-inner-addon ">
+    <i class="glyphicon glyphicon-lock"></i>
+        <input type="password" name="password" id="password" placeholder="Hasło">
+        </div>
+      <button>zaloguj</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

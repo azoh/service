@@ -1,0 +1,4 @@
+cd desktop
+cd service src
+svenv\Scripts\activate
+python manage.py runserver

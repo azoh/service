@@ -1,0 +1,46 @@
+
+
+@media (min-width: 768px)
+{
+    .navbar-header
+    {
+        float: left;
+    }
+}
+
+@media (max-width:479px)
+{
+    .poster-text h2
+    {
+        font-size: 120%;
+        font-weight: 600;
+    }
+    .poster-text p
+    {
+        font-size: 100%;
+    }
+    #main
+    {
+    margin-bottom: 360px;
+    }
+}
+
+@media (min-width:992px)
+{
+    .poster-text
+    {
+        margin-right: 50%;
+    }
+}
+@media (max-width:767px)
+{
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+  		margin-left: 15px;
+      color: #fff;
+  		border-radius: 2px;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
+      background: #fff;
+  		width: 90%;
+  }
+}
