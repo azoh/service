@@ -5,7 +5,7 @@
 <section id="produkt">
 <div class="container">
 <div class="row">
-    {% if awarie.count > 0 %}
+    {% if awarie_all.count > 0 %}
 	<table id="result_list" class="table table-striped table-bordered">
 		<thead>
 			<tr>
@@ -15,10 +15,12 @@
                 <th scope="col" class="sortable column">Status</th>
 				<th scope="col" class="sortable column">Zgłaszający</th>
 				<th scope="col" class="sortable column">Data zgłoszenia awarii</th>
+				<th scope="col" class="sortable column">Data rozpoczęcia naprawy</th>
+				<th scope="col" class="sortable column">Data zakończenia naprawy</th>
 			</tr>
 		</thead>
 		<tbody>
-        {% for awarie in awarie %}
+        {% for awarie in awarie_all %}
 			<tr class="row1 text-center">
 				<td class="field-wydzial">{{ awarie.wydzial }}</td>
 				<td class="field-maszyna"><strong>{{ awarie.maszyna }}</strong></td>
@@ -26,6 +28,8 @@
 				<th class="field-status">{{ awarie.status }}</th>
 				<td class="field-declarant">{{ awarie.user }}</td>
 				<td class="field-filing_date">{{ awarie.add_date |date:"d-m-Y H:i" }}</td>
+				<td class="field-filing_date">{{ awarie.repair_date |date:"d-m-Y H:i" }}</td>
+				<td class="field-filing_date">{{ awarie.remove_date |date:"d-m-Y H:i" }}</td>
 			</tr>
         {% endfor %}
         </tbody>

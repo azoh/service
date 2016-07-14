@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from .forms import AwariaForm
 from django.utils import timezone
 from django.shortcuts import redirect
+from django.core.paginator import Paginator
 
 
 @login_required
@@ -16,6 +17,15 @@ def awarie(request):
     return render(request, 'awarie.html', {
         'awarie' : awarie
         })
+        
+@login_required
+def awarie_all(request):
+    awarie_all = Awaria.objects.all().order_by('status','-add_date')
+
+    return render(request, 'awarie_all.html', {
+        'awarie_all' : awarie_all
+        })
+
 
 def awarie_new(request):
     if request.method == "POST":

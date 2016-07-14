@@ -11,6 +11,7 @@
         <div class="col-md-12 text-center">
             <form method="POST" class="awaria-form">{% csrf_token %}
         {{ form.as_p }}
+        <!--<input type="submit" class="save btn btn-success" name="submit" value="ZAPISZ">-->
         <button type="submit" class="save btn btn-success">ZAPISZ</button>
         <a href="/loggedin/" class="btn btn-danger" role="button">ANULUJ</a>
     </form>

@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', admin.site.urls),
     url(r'^awarie/$', 'failure.views.awarie'),
+    url(r'^awarie_all/$', 'failure.views.awarie_all'),
     url(r'^awarie/new/$', 'failure.views.awarie_new'),
 
     url(r'^login/$', 'service.views.login'),

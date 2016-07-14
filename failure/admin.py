@@ -28,10 +28,11 @@ class StatusAdmin(admin.ModelAdmin):
 	ordering = ["id"]
 
 class AwariaAdmin(admin.ModelAdmin):
-	list_display = ["maszyna", "wydzial", "description", "add_date", "user", "status", "update_date", "sur"]
+	list_display = ["maszyna", "wydzial", "description", "add_date", "user", "sur", "repair_date", "remove_date", "status"]
 	exclude = ["user","add_date"]
 	list_filter = ["wydzial", "add_date", "status"]
 	list_display_links = ["status"]
+	search_fields = ["maszyna", "sur"]
 	ordering = ("status", "-add_date")
 
 	def save_model(self, request, obj, form, change):

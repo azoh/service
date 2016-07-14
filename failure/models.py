@@ -52,10 +52,11 @@ class Awaria(models.Model):
 	wydzial = models.ForeignKey(Wydzial, verbose_name='Wydział')
 	description = models.TextField(verbose_name="Opis awarii", blank=True)
 	add_date = models.DateTimeField(auto_now_add=True, verbose_name="Data zgłoszenia")
+	repair_date = models.DateTimeField(blank=True, null=True, verbose_name="Data rozpoczęcia naprawy")
+	remove_date = models.DateTimeField(blank=True, null=True, verbose_name="Data zakończenia naprawy")
 	user = models.ForeignKey(User, verbose_name='Zgłaszający')
 	sur = models.CharField(max_length = 50, verbose_name='Przyjęte przez',blank=True, null=True)
 	status = models.ForeignKey(Status, default=1, verbose_name='Status')
-	update_date = models.DateTimeField(auto_now=True, verbose_name="Data ostaniej modyfikacji")
 
 	def __str__(self):
 		return str(self.status)
