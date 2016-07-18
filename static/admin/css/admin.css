@@ -108,3 +108,18 @@ select[name="action"] {
 .navbar-brand {
     padding-top: 15px;
 }
+.vDateField {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 5px;
+	cursor: pointer;
+	font-size: 2rem;
+	width: 15rem;
+}
+.vTimeField {
+	border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 5px;
+	font-size: 2rem;
+	width: 15rem;
+}

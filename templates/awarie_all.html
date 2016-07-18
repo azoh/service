@@ -5,7 +5,7 @@
 <section id="produkt">
 <div class="container">
 <div class="row">
-    {% if awarie_all.count > 0 %}
+    {% if awarie_all %}
 	<table id="result_list" class="table table-striped table-bordered">
 		<thead>
 			<tr>
@@ -20,7 +20,7 @@
 			</tr>
 		</thead>
 		<tbody>
-        {% for awarie in awarie_all %}
+        {% for awarie in awarie_all.object_list %}
 			<tr class="row1 text-center">
 				<td class="field-wydzial">{{ awarie.wydzial }}</td>
 				<td class="field-maszyna"><strong>{{ awarie.maszyna }}</strong></td>
@@ -39,5 +39,20 @@
         {% endif %}
 </div>
 </div>
+		<nav>
+			<ul class="pager">
+				<li>{% if awarie_all.has_previous %}
+						<a href="?page={{ awarie_all.previous_page_number }}">Poprzednia</a>
+					{% endif %}
+				</li>
+				<li> 
+					Strona: {{ awarie_all.number }} z {{ awarie_all.paginator.num_pages }}
+				</li>
+				<li>{% if awarie_all.has_next %}
+						<a href="?page={{ awarie_all.next_page_number }}">Następna</a>
+					{% endif %}
+				</li>
+			</ul>
+		</nav>
 </section>
 {% endblock %}

@@ -12,7 +12,19 @@ from django.core.paginator import Paginator
 @user_passes_test(lambda u: u.groups.filter(name='Brygadzista').count() == 0, login_url='/loggedin/')
 @user_passes_test(lambda u: u.groups.filter(name='Kierownik').count() == 0, login_url='/loggedin/')
 def awarie(request):
-    awarie = Awaria.objects.filter(status=1).order_by('status','-add_date')
+    awarie_list = Awaria.objects.filter(status=1).order_by('status','-add_date')
+
+    paginator = Paginator(awarie_list,5)
+
+    try:
+        page = int(request.GET.get('page', '1'))
+    except:
+        page = 1
+
+    try:
+        awarie = paginator.page(page)
+    except(EmptyPage, InvalidPage):
+        awarie = paginator.page(paginator.num_pages)
 
     return render(request, 'awarie.html', {
         'awarie' : awarie
@@ -20,7 +32,19 @@ def awarie(request):
         
 @login_required
 def awarie_all(request):
-    awarie_all = Awaria.objects.all().order_by('status','-add_date')
+    awarie_all_list = Awaria.objects.all().order_by('status','-add_date')
+
+    paginator = Paginator(awarie_all_list,5)
+
+    try:
+        page = int(request.GET.get('page', '1'))
+    except:
+        page = 1
+
+    try:
+        awarie_all = paginator.page(page)
+    except(EmptyPage, InvalidPage):
+        awarie_all = paginator.page(paginator.num_pages)
 
     return render(request, 'awarie_all.html', {
         'awarie_all' : awarie_all
