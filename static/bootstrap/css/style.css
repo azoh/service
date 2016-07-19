@@ -7,7 +7,7 @@
 }
 
 .navbar {
-    background-color: #5C6195;
+    background-color: #004892;
     color: #ffffff;
     font-family: Roboto;
     text-transform: uppercase;
@@ -50,7 +50,7 @@
 
 .navbar-nav
 {
-    background-color: #5C6195;
+    background-color: #004892;
 }
 
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus
