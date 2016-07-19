@@ -3,4 +3,3 @@ __pycache__
 svenv
 .DS_Store
 komendy.txt
-db.sqlite3
